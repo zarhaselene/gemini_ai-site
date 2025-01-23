@@ -5,7 +5,7 @@ import { Navbar } from "flowbite-react";
 
 export function Header() {
   return (
-    <Navbar fluid rounded className="bg-primary">
+    <Navbar fluid rounded className="bg-primary border-b border-black">
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Netflix Gemini
