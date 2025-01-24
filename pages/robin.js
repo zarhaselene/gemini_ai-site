@@ -33,7 +33,7 @@ export default function Robin() {
       setRecipe({
         namn: "Fel",
         ingredienser: [],
-        tid: "Okänt",
+        tid: "Fel",
         steg: ["Kunde inte hämta recept. Försök igen."],
       });
     } finally {
@@ -53,9 +53,8 @@ export default function Robin() {
       <div className="flex flex-col items-start mb-4">
         <Label
           htmlFor="ai-question"
-          color="info"
           value="Vad är du sugen på att laga?"
-          className="ml-1 font-semibold"
+          className="ml-1 font-semibold text-xl text-teal-400"
         />
         <div className="flex gap-4 mt-2">
           <TextInput
@@ -81,14 +80,14 @@ export default function Robin() {
 
       {!loading && recipe && (
         <div className="flex w-full max-w-4xl gap-6">
-          <div className="w-2/5 mb-20">
-            <Card className="bg-gradient-to-br from-teal-700 to-teal-400 text-white border-cyan-700">
+          <div className="w-2/4 mb-20">
+            <Card className="bg-gradient-to-br from-teal-700 to-teal-300 text-white border-cyan-700">
               <h2 className="text-xl font-bold text-gray-900">{recipe.namn}</h2>
               <p className="text-gray-900">Tid: {recipe.tid}</p>
               <h3 className="text-lg font-semibold mt-2 text-gray-900">
                 Ingredienser:
               </h3>
-              <List className="bg-transparent text-gray-900 font-semibold text-base whitespace-normal text-left">
+              <List className="text-gray-900 font-semibold list-outside px-3">
                 {recipe.ingredienser.map((item, index) => (
                   <List.Item key={index} className="px-2 py-1">
                     {item}
@@ -98,14 +97,19 @@ export default function Robin() {
             </Card>
           </div>
 
-          <div className="w-2/3">
-            <Card className="border-2 border-cyan-500">
-              <h3 className="text-lg font-semibold">Steg:</h3>
-              <ul className="list-decimal list-inside mt-2 space-y-2">
+          <div className="w-4/5">
+            <Card className="bg-gradient-to-br from-teal-300 to-teal-700 text-white border-cyan-700">
+              <h3 className="text-lg font-semibold text-gray-900">Steg:</h3>
+              <List
+                ordered
+                className="text-gray-900 font-semibold list-outside px-3"
+              >
                 {recipe.steg.map((step, index) => (
-                  <li key={index}>{step}</li>
+                  <List.Item key={index} className="px-2 py-1">
+                    {step}
+                  </List.Item>
                 ))}
-              </ul>
+              </List>
             </Card>
           </div>
         </div>
