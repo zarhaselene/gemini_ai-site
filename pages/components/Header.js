@@ -13,14 +13,14 @@ export function Header() {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="#" active>
+        <Navbar.Link href="/#" active>
           Home
         </Navbar.Link>
         <Navbar.Link href="/julia">Julia</Navbar.Link>
         <Navbar.Link href="/zarha">Zarha</Navbar.Link>
         <Navbar.Link href="/robin">Robin</Navbar.Link>
         <Navbar.Link href="/bassem">Bassem</Navbar.Link>
-        <Navbar.Link href="#">Mohammed</Navbar.Link>
+        <Navbar.Link href="/Mohammed">Mohammed</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
