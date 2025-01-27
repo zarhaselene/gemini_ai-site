@@ -62,7 +62,7 @@ export default function Robin() {
           value="Vad är du sugen på att laga?"
           className="ml-1 font-semibold text-base sm:text-lg text-teal-500"
         />
-        <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full">
           <TextInput
             id="ai-question"
             value={prompt}
@@ -70,12 +70,12 @@ export default function Robin() {
             onKeyDown={keyDown}
             type="text"
             placeholder="Skriv något, t.ex. kyckling, Japanskt..."
-            className="w-full sm:w-[300px]"
+            className="w-full sm:w-[400px]"
           />
           <Button
             onClick={sendPrompt}
             gradientMonochrome="teal"
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto px-3"
           >
             <HiOutlineArrowRight className="h-6 w-6" />
           </Button>
