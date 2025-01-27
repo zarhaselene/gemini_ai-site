@@ -27,7 +27,6 @@ export default function Robin() {
         .trim()
         .replace(/^```json/, "")
         .replace(/```$/, "");
-      console.log("Raw response from API:", responseText);
       const recipeData = JSON.parse(responseText);
 
       setRecipe(recipeData);
@@ -54,10 +53,13 @@ export default function Robin() {
   return (
     <div className="flex justify-center items-center min-h-[60vh] flex-col">
       <div className="mb-4">
+        <h1 className="text-text-color font-bold ml-0.5 text-3xl mb-2">
+          Matinspiration
+        </h1>
         <Label
           htmlFor="ai-question"
           value="Vad är du sugen på att laga?"
-          className="ml-1 font-semibold text-xl text-teal-400"
+          className="ml-1 font-semibold text-lg text-teal-500"
         />
         <div className="flex gap-4 mt-2">
           <TextInput

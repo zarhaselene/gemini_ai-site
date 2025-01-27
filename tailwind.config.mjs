@@ -12,9 +12,10 @@ export default {
     extend: {
       colors: {
         "bg-color": "#292635",
-        primary: "#292646",
+        primary: "#171717",
 
         "text-color": "#F8F8F2",
+        "gray-text": "#a4a4a4",
         "primary-accent": "#F377A7",
         "hover-color": "#1a1a1a",
 

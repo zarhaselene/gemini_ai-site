@@ -13,7 +13,7 @@ export function Header() {
   return (
     <Navbar fluid className="bg-primary border-b border-black">
       <Navbar.Brand as={Link} href="/#">
-        <span className="self-center whitespace-nowrap text-xl font-semibold">
+        <span className="self-center whitespace-nowrap text-xl font-semibold text-gray-text">
           Netflix Gemini
         </span>
       </Navbar.Brand>
@@ -21,41 +21,41 @@ export function Header() {
       <Navbar.Collapse>
         <Navbar.Link
           active={currentPath === "/"}
-          className="text-black text-base font-semibold"
+          className="text-gray-text text-base font-semibold"
           href="/#"
         >
           Home
         </Navbar.Link>
         <Navbar.Link
-          className="text-black text-base font-semibold"
+          className="text-gray-text text-base font-semibold"
           href="/julia"
           active={currentPath === "/julia"}
         >
           Julia
         </Navbar.Link>
         <Navbar.Link
-          className="text-black text-base font-semibold"
+          className="text-gray-text text-base font-semibold"
           href="/zarha"
           active={currentPath === "/zarha"}
         >
           Zarha
         </Navbar.Link>
         <Navbar.Link
-          className="text-black text-base font-semibold"
+          className="text-gray-text text-base font-semibold"
           href="/robin"
           active={currentPath === "/robin"}
         >
           Robin
         </Navbar.Link>
         <Navbar.Link
-          className="text-black text-base font-semibold"
+          className="text-gray-text text-base font-semibold"
           href="/bassem"
           active={currentPath === "/bassem"}
         >
           Bassem
         </Navbar.Link>
         <Navbar.Link
-          className="text-black text-base font-semibold"
+          className="text-gray-text text-base font-semibold"
           href="/Mohammed"
           active={currentPath === "/mohammed"}
         >
