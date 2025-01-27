@@ -13,7 +13,7 @@ export default {
       colors: {
         "bg-color": "#292635",
         primary: "#171717",
-
+        primary2: "#292646",
         "text-color": "#F8F8F2",
         "gray-text": "#a4a4a4",
         "primary-accent": "#F377A7",
