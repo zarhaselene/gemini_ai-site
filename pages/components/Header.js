@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <Navbar fluid className="bg-primary border-b border-black">
-      <Navbar.Brand as={Link} href="/#">
+      <Navbar.Brand as={Link} href="/#" onClick={() => setCurrentPath("/")}>
         <span className="self-center whitespace-nowrap text-xl font-semibold text-gray-text">
           Netflix Gemini
         </span>

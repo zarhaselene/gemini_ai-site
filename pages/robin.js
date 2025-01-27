@@ -51,17 +51,17 @@ export default function Robin() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[60vh] flex-col">
+    <div className="flex justify-center items-center min-h-[60vh] flex-col px-4 sm:px-6">
       <div className="mb-4">
-        <h1 className="text-text-color font-bold ml-0.5 text-3xl mb-2">
+        <h1 className="text-text-color font-bold ml-0.5 text-2xl sm:text-3xl my-2">
           Matinspiration
         </h1>
         <Label
           htmlFor="ai-question"
           value="Vad är du sugen på att laga?"
-          className="ml-1 font-semibold text-lg text-teal-500"
+          className="ml-1 font-semibold text-base sm:text-lg text-teal-500"
         />
-        <div className="flex gap-4 mt-2">
+        <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full">
           <TextInput
             id="ai-question"
             value={prompt}
@@ -69,9 +69,13 @@ export default function Robin() {
             onKeyDown={keyDown}
             type="text"
             placeholder="Skriv något, t.ex. kyckling, Japanskt..."
-            className="w-[300px]"
+            className="w-full sm:w-[300px]"
           />
-          <Button onClick={sendPrompt} gradientMonochrome="teal">
+          <Button
+            onClick={sendPrompt}
+            gradientMonochrome="teal"
+            className="w-full sm:w-auto"
+          >
             Skicka
           </Button>
         </div>
@@ -84,8 +88,8 @@ export default function Robin() {
       )}
 
       {!loading && recipe && (
-        <div className="flex w-full max-w-4xl gap-6">
-          <div className="w-2/4 mb-20">
+        <div className="flex flex-col lg:flex-row w-full max-w-4xl gap-4 lg:gap-6">
+          <div className="w-full lg:w-2/4 mb-6 lg:mb-20">
             <Card className="bg-gradient-to-br from-teal-700 to-teal-300 text-white border-cyan-700">
               <h2 className="text-xl font-bold text-gray-900">{recipe.namn}</h2>
               <p className="text-gray-900">Tid: {recipe.tid}</p>
@@ -102,7 +106,7 @@ export default function Robin() {
             </Card>
           </div>
 
-          <div className="w-4/5">
+          <div className="w-full lg:w-4/5 mb-20">
             <Card className="bg-gradient-to-br from-teal-300 to-teal-700 text-white border-cyan-700">
               <h3 className="text-lg font-semibold text-gray-900">Steg:</h3>
               <List
