@@ -1,26 +1,66 @@
-"use client";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import { Navbar } from "flowbite-react";
 
 export function Header() {
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
   return (
-    <Navbar fluid rounded className="bg-primary border-b border-black">
-      <Navbar.Brand as={Link} href="https://flowbite-react.com">
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+    <Navbar fluid className="bg-primary border-b border-black">
+      <Navbar.Brand as={Link} href="/#">
+        <span className="self-center whitespace-nowrap text-xl font-semibold">
           Netflix Gemini
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="/#" active>
+        <Navbar.Link
+          active={currentPath === "/"}
+          className="text-black text-base font-semibold"
+          href="/#"
+        >
           Home
         </Navbar.Link>
-        <Navbar.Link href="/julia">Julia</Navbar.Link>
-        <Navbar.Link href="/zarha">Zarha</Navbar.Link>
-        <Navbar.Link href="/robin">Robin</Navbar.Link>
-        <Navbar.Link href="/bassem">Bassem</Navbar.Link>
-        <Navbar.Link href="/Mohammed">Mohammed</Navbar.Link>
+        <Navbar.Link
+          className="text-black text-base font-semibold"
+          href="/julia"
+          active={currentPath === "/julia"}
+        >
+          Julia
+        </Navbar.Link>
+        <Navbar.Link
+          className="text-black text-base font-semibold"
+          href="/zarha"
+          active={currentPath === "/zarha"}
+        >
+          Zarha
+        </Navbar.Link>
+        <Navbar.Link
+          className="text-black text-base font-semibold"
+          href="/robin"
+          active={currentPath === "/robin"}
+        >
+          Robin
+        </Navbar.Link>
+        <Navbar.Link
+          className="text-black text-base font-semibold"
+          href="/bassem"
+          active={currentPath === "/bassem"}
+        >
+          Bassem
+        </Navbar.Link>
+        <Navbar.Link
+          className="text-black text-base font-semibold"
+          href="/Mohammed"
+          active={currentPath === "/mohammed"}
+        >
+          Mohammed
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

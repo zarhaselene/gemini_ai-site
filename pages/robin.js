@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button, Label, TextInput, Spinner, Card, List } from "flowbite-react";
 
 const startPrompt =
-  "Kan du ge mig ett recept på en maträtt, på svenska, som JSON. Svaret ska alltid ha exakt följande struktur: " +
+  "Ge mig ett recept på en maträtt, gärna olika varje gång, på svenska, som JSON. Svaret ska alltid ha exakt följande struktur: " +
   '{ "namn": "<Maträttens namn>", "ingredienser": ["<Ingrediens 1>", "<Ingrediens 2>", "..."], "tid": "<Tillagningstid>", "steg": ["<Steg 1>", "<Steg 2>", "..."] }. ' +
   "Anpassa receptet baserat på följande input: ";
 
@@ -13,6 +13,9 @@ export default function Robin() {
   const [loading, setLoading] = useState(false);
 
   async function sendPrompt() {
+    if (!prompt.trim()) {
+      return;
+    }
     setLoading(true);
     try {
       const result = await model.generateContent(startPrompt + prompt);
@@ -49,8 +52,8 @@ export default function Robin() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[70vh] flex-col">
-      <div className="flex flex-col items-start mb-4">
+    <div className="flex justify-center items-center min-h-[60vh] flex-col">
+      <div className="mb-4">
         <Label
           htmlFor="ai-question"
           value="Vad är du sugen på att laga?"
