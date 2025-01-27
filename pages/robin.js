@@ -1,6 +1,7 @@
 import { model } from "@/util/ai";
 import { useState } from "react";
 import { Button, Label, TextInput, Spinner, Card, List } from "flowbite-react";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 const startPrompt =
   "Ge mig ett recept på en maträtt, gärna olika varje gång, på svenska, som JSON. Svaret ska alltid ha exakt följande struktur: " +
@@ -76,7 +77,7 @@ export default function Robin() {
             gradientMonochrome="teal"
             className="w-full sm:w-auto"
           >
-            Skicka
+            <HiOutlineArrowRight className="h-6 w-6" />
           </Button>
         </div>
       </div>
